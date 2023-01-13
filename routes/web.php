@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/form',[\App\Http\Controllers\HomeController::class,'form']);
 Route::post('/store',[\App\Http\Controllers\HomeController::class,'store']);
 
+Route::get('/',function (){
+    return view('welcome');
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

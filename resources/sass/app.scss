@@ -6,3 +6,12 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+form{
+    border: 15px solid red;
+    border-radius:60px;
+    border-bottom-color: #0a53be;
+    border-left-color:#0b2e13;
+    border-right-color:#3dd5f3;
+
+}

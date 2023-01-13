@@ -16,5 +16,6 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'item'=>'{0}No Item|{1}Item (:count)|[2,*]Items (:count)'
 
 ];

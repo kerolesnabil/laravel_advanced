@@ -7,11 +7,15 @@
     "require": {
         "php": "^7.3|^8.0",
         "albertcht/invisible-recaptcha": "^1.9",
+        "algolia/algoliasearch-client-php": "^3.3",
+        "algolia/scout-extended": "^2.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/scout": "^9.7",
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

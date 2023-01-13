@@ -2,23 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Symfony\Component\Console\Input\Input;
 
 class HomeController extends Controller
 {
-     public function form(){
-         return view('form');
-     }
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        $t=User::search('en')->get();
 
-     public function store(Request $request){
-
-         $this->validate($request,[
-             'g-recaptcha-response' => 'required|captcha'
-         ]);
-         return $request->all();
-     }
-
+        return view('home');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\Hello;
+use App\Console\Commands\rename;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -28,6 +29,7 @@ class Kernel extends ConsoleKernel
     {
 
         Hello::class;
+        rename::class;
 
         $this->load(__DIR__.'/Commands');
 

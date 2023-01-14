@@ -3,22 +3,23 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
-class Hello2 extends Command
+class rename extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'keroles:rename { from : Name of table you want to rename} { to : Name you want to give now}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'rename table';
 
     /**
      * Create a new command instance.
@@ -37,6 +38,18 @@ class Hello2 extends Command
      */
     public function handle()
     {
-        return 0;
+//
+        $from=$this->argument('from');
+//
+
+        $to=$this->argument('to');
+//
+        $this->info($from ." ".$to);
+
+       $query= DB::statement("ALTER TABLE {$from} RENAME TO {$to}");
+
+        $this->info("Table name {$from} is now {$to} and result {$query}");
+
+
     }
 }

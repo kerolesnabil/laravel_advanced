@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Events\event1;
+use App\Listeners\SendPodcastNotification1;
+use App\Listeners\SendPodcastNotification2;
+use App\Listeners\SendPodcastNotification3;
+use App\Listeners\SendPodcastNotification4;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +23,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        event1::class=>[
+            SendPodcastNotification1::class,
+            SendPodcastNotification2::class,
+            SendPodcastNotification3::class,
+            SendPodcastNotification4::class,
+        ]
     ];
 
     /**

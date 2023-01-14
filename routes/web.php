@@ -26,6 +26,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('testEvent',function (){
+   event(new \App\Events\event1('how are you'));
+});
+
 Route::get('sendMail',function (){
 
     dispatch(new \App\Jobs\SendEmailMailable());
